@@ -1,0 +1,112 @@
+.btn {
+    color: #231f20;
+    text-align: center;
+    letter-spacing: 0.25px;
+    outline: none !important;
+    height: 40px;
+    font-size: 14px;
+    min-width: 210px;
+    max-width: 290px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    &.disabled,
+    &:disabled {
+        background-color: rgba(#666, 0.1) !important; // as design
+        color: #231f20 !important; // as design
+        border-color: transparent !important;
+    }
+
+    @include media-breakpoint-up(md) {
+        height: 48px;
+        font-size: 18px;
+        line-height: 44px;
+        padding: 0 20px;
+        font-size: 18px;
+        display: inline-block;
+        width: auto;
+    }
+
+    &.btn-default,
+    &.btn-outline-secondary {
+        background-color: transparent;
+        @include button-variant(#fff, #7a7a7a);
+        color: #231f20;
+    }
+
+    &.btn-yellow,
+    &.btn-primary {
+        @include button-variant(
+            $yellow,
+            $yellow,
+            $yellow-hover,
+            $yellow-hover,
+            $yellow,
+            $yellow
+        );
+        color: #231f20 !important; // bad BT does not support a fixed button color. BT have a automatically calculation depends the background
+    }
+
+    &.btn-normal-in-form {
+        min-width: 290px;
+        @include button-variant(#fff, #7a7a7a);
+
+        @include media-breakpoint-up(md) {
+            margin-top: 20px;
+            min-width: 210px;
+        }
+    }
+}
+
+.btn.btn-with-icon {
+    height: 52px;
+    text-align: left;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    margin-top: 20px;
+    min-width: 290px;
+
+    .icon {
+        background-repeat: no-repeat;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-size: contain;
+        vertical-align: middle;
+        margin-right: 16px;
+    }
+
+    @include button-variant(
+        #fff,
+        $btn-border-color,
+        $yellow-hover,
+        $yellow-hover,
+        $yellow,
+        $yellow
+    );
+
+    @include media-breakpoint-up(md) {
+        min-width: 255px;
+        height: 60px;
+        font-size: 18px;
+    }
+}
+
+.buttons {
+    margin: 20px auto;
+
+    @include media-breakpoint-up(md) {
+        margin: 0 auto;
+        .btn {
+            margin-right: 20px;
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .btn {
+            margin-top: 20px;
+        }
+    }
+}

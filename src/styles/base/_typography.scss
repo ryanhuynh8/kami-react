@@ -1,0 +1,31 @@
+// thientq: typography for PL
+@for $i from 1 through 54 {
+    .font-size-#{$i} {
+        font-size: #{$i}px;
+    }
+    .font-size-md-#{$i} {
+        @include media-breakpoint-up(md) {
+            font-size: #{$i}px;
+        }
+    }
+}
+// override BT4
+$font-pl : () ;
+// stylelint-disable-next-line scss/dollar-variable-default
+$font-pl : map-merge(
+    (
+        "thin": $font-hel-thin,
+        "light": $font-hel-light,
+        "normal": $font-hel,
+        "medium": $font-hel-medium,
+        "bold": $font-hel-bold,
+    ),
+    $font-pl
+);
+
+@each $style, $font-family in $font-pl {
+    .font-weight-#{$style} {
+        font-family: $font-family;
+        font-weight: normal!important;
+    }
+}

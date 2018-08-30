@@ -1,0 +1,105 @@
+.ib-container-fluid {
+	position: relative;
+	overflow: hidden; // make a consistent spacing to footer between pages
+}
+
+// aim to make footer be sticky
+html {
+	min-height: 100%;
+	position: relative;
+}
+body {
+	margin-bottom: 140px;
+
+	@include media-breakpoint-up(md){
+		margin-bottom: 255px;
+	}
+
+	.page-footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+// ! aim to make footer be sticky
+
+.page-footer {
+	background-color: #fff;
+	border-top: 25px solid #FFCC00;
+	font-size: 14px;
+	color: #231F20;
+	padding-top: 20px;
+	margin-top: 20px;
+
+	.footer-info {
+		div {
+			margin-bottom: 15px;
+			overflow: hidden;
+			clear: both;
+			display: flex;
+			align-items: center;
+
+			img {
+				margin-right: 12px;
+			}
+		}
+	}
+
+	.copyright {
+		font-size: 12px;
+		color: #6A6862;
+		font-family: 'HelveticaNeue';
+		margin-top: 6px;
+
+		p {
+			margin-top: 21px;
+		}
+	}
+
+	@media screen and (max-width:767px) {
+		border-top-width: 15px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		font-size: 7px;
+
+		.footer-info {
+			div {
+				margin-bottom: 0;
+
+				img {display: none}
+			}
+		}
+
+		.logo-footer {
+			padding-right: 0;
+
+			img {
+				max-width: 100%;
+				max-height: 30px;
+			}
+
+		}
+
+		.copyright {
+			text-align: left;
+			margin-bottom: 12px;
+			color: #acacac;
+			border-top: #d1d1d1 solid 1px;
+			padding-top: 12px;
+
+			img {
+				float: right;
+				width: 85px;
+			}
+
+			p {
+				float: left;
+				font-size: 7px;
+				margin-top: 5px;
+			}
+		}
+
+	}
+
+}

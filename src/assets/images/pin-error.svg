@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+    <g fill="none" fill-rule="evenodd">
+        <g stroke="#4F4D4C" stroke-width="3" transform="translate(4 4)">
+            <ellipse cx="12.453" cy="12.736" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="12.453" cy="50.094" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="12.453" cy="87.453" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="51.195" cy="12.736" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="51.195" cy="50.094" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="51.195" cy="87.453" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="89.937" cy="12.736" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="89.937" cy="50.094" fill="#FFF" rx="10.953" ry="11.236"/>
+            <ellipse cx="89.937" cy="87.453" fill="#FC0" rx="10.953" ry="11.236"/>
+        </g>
+        <g stroke-width="3" transform="translate(69.66 69.66)">
+            <circle cx="27.17" cy="27.17" r="27.17" fill="#FF001F" stroke="#4F4C4D"/>
+            <g stroke="#FFF">
+                <path d="M27.17 33.962V13.585M27.17 41.887V38.49"/>
+            </g>
+        </g>
+        <path d="M0 0h128v128H0z"/>
+    </g>
+</svg>

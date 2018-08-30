@@ -1,0 +1,61 @@
+.landing-banner {
+    background-color: #231f20;
+    color: #fff;
+    margin-bottom: 20px;
+    //font-family: $font-hel-thin;
+
+    .container {
+        position: relative;
+        min-height: 124px;
+    }
+
+    .text {
+        padding: 0;
+        position: absolute;
+        bottom: 20px;
+        left: 15px;
+        right: 15px;
+        line-height: 1.71;
+    }
+
+    .bg {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        background: 100% 100% no-repeat;
+        display: none;
+    }
+    .title {
+        font-family: $font-hel-medium;
+        margin-top: 15px;
+    }
+
+    .content {
+        font-family: $font-hel-thin;
+    }
+    @include media-breakpoint-up(md) {
+        margin-bottom: 50px;
+
+        .container {
+            min-height: 320px;
+        }
+        .content {
+            font-size: 20px;
+            padding-right: 360px;
+        }
+        .text {
+            bottom: 50px;
+        }
+        .bg {
+            display: block;
+        }
+
+        .title {
+            font-size: 32px;
+            margin: 20px 0;
+            font-family: $font-hel-light;
+        }
+    }
+}

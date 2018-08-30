@@ -1,0 +1,406 @@
+html {
+}
+
+body {
+    color: $mainColor;
+    background: #fff;
+    @include media-breakpoint-down(sm) {
+        font-size: 14px;
+    }
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a {
+    &.disabled{
+        color: #d1d1d1;
+        opacity: 1;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'HelveticaNeue-Light';
+    margin-bottom: 30px;
+    margin-top: 30px;
+    // padding-left: 18px;
+}
+
+p.heading-sub {
+    margin-bottom: 47px;
+    margin-top: -20px;
+}
+
+h2 {
+    font-size: 3.2rem;
+    font-family: 'HelveticaNeue-Light';
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+h4 {
+    font-size: 1.6rem;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+/* Error cases */
+.with-errors {
+    display: none;
+}
+
+.has-error {
+    input.form-control {
+        border-color: $errorColor !important;
+        border-width: 1px !important;
+    }
+
+    .with-errors {
+        display: block;
+        color: $errorColor;
+        clear: both;
+    }
+
+    .input-group-addon {
+        color: #555;
+        background-color: #f2dede;
+        border-color: $errorColor;
+        border-width: 2px !important;
+    }
+
+}
+
+
+
+/*----------------Default button-----------------*/
+
+.navbar-default {
+    height: 72px;
+    background: $blackColor;
+}
+
+// Be careful when changing below name since it is used in OTPModal.js
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+
+}
+
+.no-padding {
+    padding: 0;
+}
+
+.debug-border {
+    border: 1px solid black;
+}
+
+.display-table {
+    display: table;
+}
+
+.no-right-border {
+    border-right: 0 !important;
+    //FIXME: can we does better than this? (Ryan)
+}
+
+.no-bottom-border {
+    border-bottom: 0 ! important;
+}
+
+.vertical-centered {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.ib-page-header {
+    font-size: 40px;
+    display: block;
+}
+
+.error-text {
+    color: $errorColor;
+}
+
+// RESET BOOTSTRAP styles
+.dropdown-menu {
+    border-radius: 0;
+    box-shadow: none;
+    border: 1px solid #7A7A7A;
+}
+
+.form-control {
+    background-clip: padding-box;
+    box-shadow: none;
+}
+
+// Common awesome styles - thientq
+%modal-awesome {
+    .modal-dialog {
+        @media screen and (min-width: 768px) {
+            width: auto;
+            max-width: 615px;
+        }
+
+        @media screen and (max-width: 767px) {
+            max-width: 400px; // make 210px buttons don't touch together.
+            width: percentage(250/320);
+            word-wrap: break-word;
+        }
+
+        .modal-content {
+            height: auto;
+            width: 100%;
+            border: 0;
+
+            @media screen and (max-width: 767px) {
+                height: auto;
+                display: block;
+            }
+
+            .close {
+                color: #ffcc00;
+                font-size: 2.5rem;
+                font-weight: 500;
+                position: absolute;
+                right: 20px;
+                top: 10px;
+                opacity: 1;
+                text-shadow: none;
+            }
+
+            .modal-header {
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                @media screen and (max-width: 767px) {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+                .img {
+                    background: 50% 50% no-repeat;
+                    background-size: contain;
+                    height: 48px;
+                    width: 48px;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-right: 20px;
+                }
+
+                .modal-title {
+                    vertical-align: middle;
+                }
+
+                @media screen and (max-width: 767px) {
+                    .img {
+                        display: block;
+                        margin: 0 auto 8px;
+                        background-position: 50% 100%;
+                    }
+
+                    .modal-title {
+                        margin-bottom: 4px;
+                    }
+
+                }
+
+            }
+
+            .modal-body {
+                height: auto;
+
+                p {
+                    max-width: none;
+                }
+
+                @media screen and (min-width: 768px) {
+                    padding: 40px 50px 130px; // 40 + 48(~50) + 40 => 130
+
+                    .buttons {
+                        bottom: 40px;
+
+                        .btn {
+                            min-width: 210px;
+                            float: right;
+
+                            & + .btn {
+                                margin-right: 30px;
+                                float: left;
+                            }
+
+                        }
+
+                    }
+
+                }
+
+                @media screen and (max-width: 767px) {
+                    display: block;
+                    padding-right: 20px;
+                    padding-left: 20px;
+                    padding-bottom: 20px;
+                    min-height: 0;
+
+                    .buttons {
+                        margin-top: 30px;
+                        padding-bottom: 10px;
+
+                        .btn {
+                            margin-left: auto;
+                            margin-right: auto;
+                            max-width: none;
+                            width: 210px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+}
+
+// Common awesome styles - thientq
+%form-awesome {
+    width: auto;
+    margin: auto;
+
+    label {
+        font-weight: normal;
+    }
+
+    .form-control {
+        border: 1px solid #7A7A7A;
+        width: 100%;
+        padding-left: 1.2em;
+        padding-right: 1.2em;
+        border-radius: 0;
+        color: #A3A1A1;
+        height: 35px;
+        font-size: 1.4rem;
+        &:focus {
+            box-shadow: none;
+        }
+        @include media-breakpoint-up(md) {
+            height: 48px;
+            font-size: 1.6rem;
+        }
+    }
+
+    .input-group-amount {
+        position: relative;
+        // should not use input group of Boostrap for a pixel perfect UI
+        &__currency {
+            position: absolute;
+            left: 1px;
+            top: 1px;
+            bottom: 1px;
+            width: 30px;
+            text-align: center;
+            i {
+                font-style: normal;
+                display: inline-block;
+                line-height: 46px;
+                vertical-align: middle;
+
+                @media (max-width: 767px) {
+                    line-height: 33px;
+                }
+            }
+        }
+        .form-control {
+            padding-left: 25px;
+            color: $mainColor;
+
+            @include media-breakpoint-up(md) {
+                padding-left: 30px;
+            }
+        }
+
+    }
+
+    .btn.select-dropdown {
+        width: 100%;
+        height: 48px;
+        border-radius: 0;
+        text-align: left;
+
+        @media screen and (max-width: 767px) {
+            line-height: 33px;
+            height: 35px;
+            font-size: 1.4rem;
+        }
+
+        .caret {
+            right: .75em;
+            left: auto;
+        }
+
+    }
+
+    .form-group {
+        &.has-error {
+            .input-group {
+                border-color: #FF001F !important;
+            }
+
+            .form-control {
+                border-color: #FF001F;
+            }
+
+            .with-errors {
+                @media screen and (max-width: 767px) {
+                    // text-align: center;
+                }
+
+            }
+
+        }
+        @include media-breakpoint-up(md) {
+            margin-bottom: 30px;
+        }
+
+    }
+
+    .form-group-list {
+        @include media-breakpoint-up(md) {
+            .form-group:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

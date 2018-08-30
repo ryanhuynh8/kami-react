@@ -1,0 +1,85 @@
+$nav-bg-color: #231F20 !default;
+$borderColor: #D1D1D1;
+$yellow: #FFCC00;
+$tableRowBorder: #D3D2D2;
+$mainColor: #231F20;
+$silver: #CCC;
+$alto: #D2D2D2;
+$color-light-grey: #D3D2D2;
+$color-grey: #DDD;
+$color-green: #60D154;
+$color-red: #FF001F;
+$color-light-silver: #F7F7F7;
+$color-white: #FFF;
+$bg-loader: rgba(0, 0, 0, .7);
+
+//$screen-xs-landscape-min: 420px;
+//$screen-sm-min: 768px;
+//$screen-md-min: 992px;
+//$screen-lg-min: 1200px;
+
+$font-hel-thin: 'HelveticaNeue-Thin', sans-serif;
+$font-hel-light: 'HelveticaNeue-Light', sans-serif;
+$font-hel: 'HelveticaNeue', sans-serif;
+$font-hel-medium: 'HelveticaNeue-Medium', sans-serif;
+$font-hel-bold: 'HelveticaNeue-Bold', sans-serif;
+$font-heading: $font-hel-medium;
+
+$select-dropdown-width: 360px;
+
+$main-color: #231F20;
+$table-row-border: #D3D2D2;
+$dark-grey-bg: #231F20;
+$grey-bg: #7A7A7A;
+$dark-grey-color: #555;
+$grey-border-color: #4F4D4C;
+
+/* VARS */
+$fontPath: '../assets/fonts/';
+$imgPath : '../assets/images/';
+$mainColor: #4f4c4d;
+$linkColor: #3eb5e5;
+$yellow: #ffcc00;
+$footerTextColor: #6A6862;
+$yellow-hover: #FFD633;
+$errorColor: #FF001F;
+$redColor: #FF001F;
+$grayColor: #A8A8A8;
+$blackColor: #231F20;
+
+@function image-url($filename) {
+    @return $imgPath + $filename + '';
+}
+// Personal loan styles
+$font-family-sans-serif: $font-hel-light;
+$brand-primary: $yellow;
+$border-radius: 0;
+
+$primary:       $yellow;
+//$secondary:     $gray-600 !default;
+//$success:       $green !default;
+//$info:          $cyan !default;
+//$warning:       $yellow !default;
+//$danger:        $red !default;
+//$light:         $gray-100 !default;
+//$dark:          $gray-800 !default;
+
+$btn-border-color: #7a7a7a;
+$btn-border-radius: 5000px;
+$btn-border-radius-lg: 5000px;
+$btn-border-radius-sm: 5000px;
+$btn-box-shadow: none;
+$btn-focus-box-shadow: none;
+$btn-active-box-shadow: none;
+$btn-disabled-opacity: 1;
+
+$input-border-color: #7a7a7a;
+$input-color: #231f20;
+$input-btn-focus-width: 0;
+$input-btn-focus-box-shadow: none;
+$input-focus-border-color: #7A7A7A;
+
+$link-color: #3eb5e5;
+$link-decoration: underline;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: none;
