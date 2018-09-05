@@ -1,24 +1,20 @@
 import { handleActions } from 'redux-actions';
-import { VALIDATE_OTP, VALIDATE_OTP_SUCCESS, VALIDATE_OTP_FAILED } from '../store/actionTypes';
+import { HIDE_OVERLAY, SHOW_OVERLAY } from '../store/actionTypes';
 
 const initialState = {
     overlayLoading: false,
+    showOverlay: false,
 };
 
 const actions = {
-    [VALIDATE_OTP]: state => ({
+    [SHOW_OVERLAY]: state => ({
         ...state,
-        overlayLoading: true,
+        showOverlay: true,
     }),
-    [VALIDATE_OTP_SUCCESS]: state => ({
+    [HIDE_OVERLAY]: state => ({
         ...state,
-        overlayLoading: false,
+        showOverlay: false,
     }),
-    [VALIDATE_OTP_FAILED]: state => ({
-        ...state,
-        overlayLoading: false,
-    }),
-
 };
 
 export default handleActions(actions, initialState);

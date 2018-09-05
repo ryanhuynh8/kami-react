@@ -7,3 +7,5 @@ export const API_HEADER_INPUTS = {
     CHANEL: 'Channel.Web',
     CONTENT_TYPE: 'application/json;charset=UTF-8',
 };
+
+export const PER_PAGE = 20;

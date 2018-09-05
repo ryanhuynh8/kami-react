@@ -1,37 +1,11 @@
 import { createAction } from 'redux-actions';
 import {
-    DUMMY_ACTION,
-    FETCH_CONFIGURATION,
-    FETCH_CONFIGURATION_SUCCESS,
-    FETCH_CONFIGURATION_FAILED,
-    HANDLE_ERROR_API,
-    HIDE_MODAL_HANDLE_ERROR_API,
-    VALIDATION_SAID,
-    VALIDATION_SAID_SUCCESS,
-    VALIDATION_SAID_FAILED,
-    VALIDATE_OTP,
-    VALIDATE_OTP_SUCCESS,
-    VALIDATE_OTP_FAILED,
+    FETCH_MARVEL_HEROES, FETCH_MARVEL_HEROES_SUCCESS, FETCH_MARVEL_HEROES_FAILED, SHOW_OVERLAY, HIDE_OVERLAY,
 } from '../store/actionTypes';
 
-export const dummyAction = createAction(DUMMY_ACTION);
-export const fetchConfiguration = createAction(FETCH_CONFIGURATION);
-export const fetchConfigurationSuccess = createAction(
-    FETCH_CONFIGURATION_SUCCESS,
-);
-export const fetchConfigurationFailed = createAction(
-    FETCH_CONFIGURATION_FAILED,
-);
+export const fetchMarvelHeroes = createAction(FETCH_MARVEL_HEROES);
+export const fetchMarvelHeroesSuccess = createAction(FETCH_MARVEL_HEROES_SUCCESS);
+export const fetchMarvelHeroesFailed = createAction(FETCH_MARVEL_HEROES_FAILED);
 
-export const handleErrorApi = createAction(HANDLE_ERROR_API);
-export const hideModalHandleErrorApi = createAction(
-    HIDE_MODAL_HANDLE_ERROR_API,
-);
-
-export const validationSaid = createAction(VALIDATION_SAID);
-export const validationSaidSuccess = createAction(VALIDATION_SAID_SUCCESS);
-export const validationSaidFailed = createAction(VALIDATION_SAID_FAILED);
-
-export const validateOtp = createAction(VALIDATE_OTP);
-export const validateOtpSuccess = createAction(VALIDATE_OTP_SUCCESS);
-export const validateOtpFailed = createAction(VALIDATE_OTP_FAILED);
+export const showOverlay = createAction(SHOW_OVERLAY);
+export const hideOverlay = createAction(HIDE_OVERLAY);

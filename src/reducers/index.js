@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
-import saidReducer from './saidReducer';
+import marvelReducer from './marvelReducer';
 import uiReducer from './uiReducer';
 
 export default combineReducers({
     router: routerReducer,
-    said: saidReducer,
+    marvel: marvelReducer,
     ui: uiReducer,
 });

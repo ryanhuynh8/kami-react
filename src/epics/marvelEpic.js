@@ -7,19 +7,18 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/of';
 import apiService from '../services/apiService';
 
-import { VALIDATION_SAID } from '../store/actionTypes';
+import { FETCH_MARVEL_HEROES } from '../store/actionTypes';
 import {
-    validationSaidSuccess,
-    handleErrorApi,
+    fetchMarvelHeroesSuccess,
 } from '../actions';
 
-export const validationSaidEpic = action$ =>
+export const fetchMarvelEpic = action$ =>
     action$
-        .ofType(VALIDATION_SAID)
-        .switchMap(action => apiService.validationSaid(action.payload))
-        .map(res => validationSaidSuccess(res))
+        .ofType(FETCH_MARVEL_HEROES)
+        .switchMap(action => apiService.fetchMarvelHeroes(action.payload))
+        .map(res => fetchMarvelHeroesSuccess(res))
         .catch(error => {
-            return Observable.of(handleErrorApi(error.response.errors));
+            console.debug(error);
         });
 
-export default combineEpics(validationSaidEpic);
+export default combineEpics(fetchMarvelEpic);
