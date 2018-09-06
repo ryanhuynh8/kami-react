@@ -5,6 +5,7 @@ import { PER_PAGE } from '../constants';
 const initialState = {
     heroes: [],
     errors: null,
+    pagesCount: 0,
 };
 
 const actions = {

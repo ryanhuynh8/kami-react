@@ -4,23 +4,25 @@ import { fetchMarvelHeroes, showOverlay } from '../actions';
 import { Input, InputGroup, InputGroupAddon, Pagination, PaginationItem, PaginationLink } from 'reactstrap';
 import { Hero } from '../components/Hero';
 
+const PER_PAGE = 18;
+
 export class Dashboard extends Component {
-    state = { limit: 20, offset: 0 };
+    state = { limit: 20, offset: 0, currentPage: 1 };
 
     constructor(props) {
         super(props);
     }
 
     componentDidMount() {
-        console.log('did mount');
-        this.props.fetchMarvelHeroes({ limit: 20, offset: 0 });
+        // this.props.fetchMarvelHeroes({ limit: 20, offset: 0 });
     }
 
-    fetchMore = pageIndex => {
-        this.setState({ offset: pageIndex * 20 }, () => {
+    fetchPage = page => {
+        this.setState({ currentPage: page }, () => {
             this.props.fetchMarvelHeroes({
-                limit: 20,
-                offset: this.state.offset,
+                limit: PER_PAGE,
+                offset: (page - 1)*PER_PAGE,
+                searchTerm: this.state.searchTerm,
             });
         });
     };
@@ -30,13 +32,7 @@ export class Dashboard extends Component {
     };
 
     doSearch = () => {
-        this.setState({ offset: 0 }, () => {
-            this.props.fetchMarvelHeroes({
-                limit: 20,
-                offset: this.state.offset,
-                searchTerm: this.state.searchTerm,
-            });
-        });
+        this.fetchPage(1);
     };
 
     showHeroDetail = (hero) => {
@@ -44,26 +40,19 @@ export class Dashboard extends Component {
     };
 
     renderPagination() {
+        console.log(Math.floor(this.state.offset / PER_PAGE));
+        console.log(this.props.pagesCount);
         return (
             <Pagination
                 aria-label="Page navigation example"
                 className="d-inline-block mt-3"
             >
-                <PaginationItem>
-                    <PaginationLink previous href="#" />
+                <PaginationItem disabled={this.state.offset === 0}>
+                    <PaginationLink previous href="#" onClick={() => this.fetchPage(this.state.currentPage - 1)}
+                    />
                 </PaginationItem>
-                {[...Array(this.props.pagesCount).keys()].map(index => (
-                    <PaginationItem>
-                        <PaginationLink
-                            href="#"
-                            onClick={() => this.fetchMore(index)}
-                        >
-                            {index + 1}
-                        </PaginationLink>
-                    </PaginationItem>
-                ))}
-                <PaginationItem>
-                    <PaginationLink next href="#" />
+                <PaginationItem disabled={Math.floor(this.state.offset / PER_PAGE) >= this.props.pagesCount}>
+                    <PaginationLink next href="#" onClick={() => this.fetchPage(this.state.currentPage + 1)}/>
                 </PaginationItem>
             </Pagination>
         );
@@ -111,8 +100,7 @@ const mapStateToProps = state => ({
     heroes: state.marvel.heroesMetaData
         ? state.marvel.heroesMetaData.results
         : [],
-    // pagesCount: state.marvel.pagesCount,
-    pagesCount: 11,
+    pagesCount: state.marvel.pagesCount,
 });
 
 const mapDispatchToProps = { fetchMarvelHeroes, showOverlay };
