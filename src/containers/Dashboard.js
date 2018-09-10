@@ -40,18 +40,16 @@ export class Dashboard extends Component {
     };
 
     renderPagination() {
-        console.log(Math.floor(this.state.offset / PER_PAGE));
-        console.log(this.props.pagesCount);
         return (
             <Pagination
                 aria-label="Page navigation example"
                 className="d-inline-block mt-3"
             >
-                <PaginationItem disabled={this.state.offset === 0}>
+                <PaginationItem disabled={this.state.currentPage === 1}>
                     <PaginationLink previous href="#" onClick={() => this.fetchPage(this.state.currentPage - 1)}
                     />
                 </PaginationItem>
-                <PaginationItem disabled={Math.floor(this.state.offset / PER_PAGE) >= this.props.pagesCount}>
+                <PaginationItem disabled={this.state.currentPage >= this.props.pagesCount}>
                     <PaginationLink next href="#" onClick={() => this.fetchPage(this.state.currentPage + 1)}/>
                 </PaginationItem>
             </Pagination>
